@@ -1,0 +1,147 @@
+:root
+{
+  /* Colors*/
+  --light-white-color: #f1f1f1;
+  --dark-color: #181818;
+  --default-color: #415ebd;
+  --red-color: #15bae4;
+}
+
+*
+{
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+body, html
+{
+  min-width: 100%;
+  min-height: 100%;
+
+  background-color: var(--dark-color);
+}
+
+header
+{
+  height: 10vh;
+
+  padding: 20px 2rem;
+
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  grid-template-rows: 10vh;
+
+  > .logo-image
+  {
+    height: 68%;
+  }
+
+  .search-container
+  {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 350px;
+    height: 50px;
+    
+    border-bottom: 2px solid var(--default-color);
+
+    &:active, &:focus
+    {
+      border-bottom: 2px solid var(--red-color);
+    }
+
+    input[type="text"]
+    {
+      width: 100%;
+      height: 100%;
+
+      font-size: 20px;
+
+      border: none;
+      outline: none;
+      background: none !important; 
+
+      color: var(--light-white-color);
+      border-radius: 8px;
+    }
+
+    > .search-image
+    {
+      height: 40px;
+    }
+  }
+
+  @media (max-width: 730px){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around; 
+
+    height: 20vh;
+
+    > .logo-image
+    {
+      height: 50px;
+    }
+  }
+}
+
+main
+{
+  height: 90vh;
+
+  display: grid;
+  place-items: center;
+
+  .card
+  {
+    display: grid;
+    place-items: center;
+    
+    width: 24rem;
+    height: 30rem;
+
+    transition: .2s;
+
+    border: 2px solid var(--default-color);
+    border-radius: 8px;
+
+    &:hover
+    {
+      border: 2px solid var(--red-color);
+      transform: translate(-5px, -5px);
+      box-shadow: 7px 7px 1px var(--default-color);
+    }
+    
+
+    > h1
+    {
+      color: var(--default-color);
+
+      font: bold 28px Arial, sans-serif;
+      text-transform: uppercase;
+      cursor: default;
+    }
+
+    > div p 
+    {
+      text-align: center;
+      color: var(--default-color);
+
+      font: 400 18px Arial, sans-serif;
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+      line-height: 40px;
+      cursor: default;
+    }
+  };
+
+  @media (max-width: 730px){
+    height: 80vh;
+  }
+};
